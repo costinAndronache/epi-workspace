@@ -91,7 +91,8 @@
                     "type": "copy",
                     "src": "apihub-root/leaflet-wallet/loader/loader-config.local.json-template",
                     "target": "apihub-root/leaflet-wallet/loader/loader-config.local.json",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 }
@@ -204,7 +205,8 @@
                     "type": "copy",
                     "src": "apihub-root/dsu-explorer/loader/loader-config.local.json-template",
                     "target": "apihub-root/dsu-explorer/loader/loader-config.local.json",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 }
@@ -397,7 +399,8 @@
                     "type": "copy",
                     "src": "./dossier-explorer-wallet-prototype/seed",
                     "target": "./apihub-root/dsu-explorer/wallet-patch/seed",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 }
@@ -425,7 +428,8 @@
                     "type": "copy",
                     "src": "./dossier-explorer-ssapp/seed",
                     "target": "./apihub-root/dsu-explorer/apps-patch/dossier-explorer-ssapp/seed",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 },
@@ -447,7 +451,8 @@
                     "type": "copy",
                     "src": "./leaflet-ssapp/seed",
                     "target": "./apihub-root/leaflet-wallet/apps-patch/leaflet-ssapp/seed",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 },
@@ -455,7 +460,8 @@
                     "type": "copy",
                     "src": "./leaflet-ssapp/seed",
                     "target": "./apihub-root/leaflet-wallet/wallet-patch/seed",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 },
@@ -477,7 +483,8 @@
                     "type": "copy",
                     "src": "./menu-wallet-prototype/seed",
                     "target": "./apihub-root/dsu-fabric-wallet/wallet-patch/seed",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 }
@@ -495,7 +502,8 @@
                     "type": "copy",
                     "src": "./dsu-fabric-ssapp/seed",
                     "target": "./apihub-root/dsu-fabric-wallet/apps-patch/dsu-fabric-ssapp/seed",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 },
@@ -512,7 +520,8 @@
                     "type": "copy",
                     "src": "./trust-loader-config",
                     "target": "./apihub-root",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 }
@@ -545,7 +554,7 @@
             ]
         }
     ],
-    "install-mobile" : [
+    "install-mobile": [
         {
             "name": "mobile/scan-app/android",
             "src": "https://github.com/PrivateSky/android-edge-agent",
@@ -560,10 +569,24 @@
                     "cmd": "cd mobile/scan-app/android && npm install"
                 }
             ]
+        },
+        {
+            "name": "mobile/scan-app/ios",
+            "src": "https://github.com/PrivateSky/ios-edge-agent",
+            "actions": [
+                {
+                    "type": "smartClone",
+                    "target": ".",
+                    "collectLog": false
+                },
+                {
+                    "type": "execute",
+                    "cmd": "cd mobile/scan-app/android && npm install"
+                }
+            ]
         }
     ],
-
-    "build-mobile" : [
+    "build-mobile": [
         {
             "name": "build-android-app",
             "actions": [
@@ -578,33 +601,34 @@
                 {
                     "type": "copy",
                     "src": "bin/MobileServerLauncher.js",
-                    "target" : "mobile/scan-app/android/app/src/main/assets/nodejs-project/MobileServerLauncher.js"
+                    "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/MobileServerLauncher.js"
                 },
                 {
                     "type": "copy",
                     "src": "privatesky/psknode/bundles/pskWebServer.js",
-                    "target" : "mobile/scan-app/android/app/src/main/assets/nodejs-project/pskWebServer.js"
+                    "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/pskWebServer.js"
                 },
                 {
                     "type": "copy",
                     "src": "privatesky/psknode/bundles/nodeBoot.js",
-                    "target" : "mobile/scan-app/android/app/src/main/assets/nodejs-project/nodeBoot.js"
+                    "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/nodeBoot.js"
                 },
                 {
                     "type": "copy",
                     "src": "apihub-root/internal-volume",
-                    "target" : "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/internal-volume"
+                    "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/internal-volume"
                 },
                 {
                     "type": "copy",
                     "src": "apihub-root/external-volume",
-                    "target" : "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/external-volume"
+                    "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/external-volume"
                 },
                 {
                     "type": "copy",
                     "src": "mobile/config/scan-app/server",
                     "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/external-volume/config",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 },
@@ -612,28 +636,108 @@
                     "type": "copy",
                     "src": "mobile/config/scan-app/android",
                     "target": "mobile/scan-app/android",
-                    "options": {
+                    "options":
+                    {
                         "overwrite": true
                     }
                 },
                 {
                     "type": "copy",
                     "src": "apihub-root/leaflet-wallet",
-                    "target" : "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/app"
+                    "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/app"
                 },
                 {
                     "type": "remove",
-                    "target" : "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/app/loader/node_modules"
+                    "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/app/loader/node_modules"
                 },
                 {
                     "type": "remove",
-                    "target" : "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/app/loader/.git"
+                    "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/app/loader/.git"
                 },
                 {
                     "type": "copy",
                     "src": "mobile/config/scan-app/loader",
-                    "target" : "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/app/loader",
-                    "options": {
+                    "target": "mobile/scan-app/android/app/src/main/assets/nodejs-project/apihub-root/app/loader",
+                    "options":
+                    {
+                        "overwrite": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "build-ios-app",
+            "actions": [
+                {
+                    "type": "execute",
+                    "cmd": "npm run clean && npm run build-all"
+                },
+                {
+                    "type": "remove",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject"
+                },
+                {
+                    "type": "copy",
+                    "src": "bin/MobileServerLauncher.js",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/MobileServerLauncher.js"
+                },
+                {
+                    "type": "copy",
+                    "src": "privatesky/psknode/bundles/pskWebServer.js",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/pskWebServer.js"
+                },
+                {
+                    "type": "copy",
+                    "src": "privatesky/psknode/bundles/nodeBoot.js",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/nodeBoot.js"
+                },
+                {
+                    "type": "copy",
+                    "src": "apihub-root/internal-volume",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/apihub-root/internal-volume"
+                },
+                {
+                    "type": "copy",
+                    "src": "apihub-root/external-volume",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/apihub-root/external-volume"
+                },
+                {
+                    "type": "copy",
+                    "src": "mobile/config/scan-app/server",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/apihub-root/external-volume/config",
+                    "options":
+                    {
+                        "overwrite": true
+                    }
+                },
+                {
+                    "type": "copy",
+                    "src": "mobile/config/scan-app/ios",
+                    "target": "mobile/scan-app/ios",
+                    "options":
+                    {
+                        "overwrite": true
+                    }
+                },
+                {
+                    "type": "copy",
+                    "src": "apihub-root/leaflet-wallet",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/apihub-root/app"
+                },
+                {
+                    "type": "remove",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/apihub-root/app/loader/node_modules"
+                },
+                {
+                    "type": "remove",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/apihub-root/app/loader/.git"
+                },
+                {
+                    "type": "copy",
+                    "src": "mobile/config/scan-app/loader",
+                    "target": "mobile/scan-app/ios/PSSmartWalletNativeLayerHost/PSSmartWalletNativeLayerHost/nodejsProject/apihub-root/app/loader",
+                    "options":
+                    {
                         "overwrite": true
                     }
                 }
